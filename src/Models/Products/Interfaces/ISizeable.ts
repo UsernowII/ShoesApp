@@ -1,0 +1,4 @@
+interface ISizeable
+{
+    Size :string;
+}

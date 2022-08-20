@@ -1,0 +1,4 @@
+interface IColorful
+{
+    Color : string;
+}
