@@ -3,9 +3,9 @@ import "reflect-metadata"
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import { UserRouter } from './router/user.router';
 import { ConfigServer } from './config/config';
 import { DataSource } from "typeorm";
+import { UserRouter } from "./user/user.router";
 
 class Server extends ConfigServer {
     public app: express.Application = express();
@@ -37,8 +37,7 @@ class Server extends ConfigServer {
         }catch(e){
             console.log(e)
             throw new Error("Error starting DB");
-        }
-        
+        }    
     }
 
 
