@@ -4,13 +4,16 @@ services:
     image: postgres:14.1-alpine
     restart: always
     ports:
-      - "5432:5432"
+      - "5400:5432"
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
     environment:
       - DATABASE_HOST=127.0.0.1
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=marketer_db
-  
+
   pgAdmin:
     image: dpage/pgadmin4
     environment:
@@ -20,3 +23,8 @@ services:
       - '80:80'
     depends_on:
       - postgres
+
+volumes:
+  postgres:
+    driver: local
+    

@@ -23,6 +23,17 @@ Dependencias de desarrollo necesarias:
 npm install -D @types/cors @types/express @types/morgan concurrently nodemon
 ```
 
+
+Configuracion base de datos con docker-compose:
+
+```
+docker --version
+``` 
+
+``` 
+docker-compose up
+```
+
 # Clases:
 
 METODOS:
