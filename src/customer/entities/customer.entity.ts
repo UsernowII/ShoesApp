@@ -1,6 +1,7 @@
-import { Column, Entity, JoinColumn, OneToOne } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
 import { BaseEntity } from "../../config/base.entity"
 import { UserEntity } from '../../user/entities/user.entity';
+import { PurchaseEntity } from '../../purchase/entities/purchase.entity';
 
 @Entity({name : "customers"})
 export class CustomerEntity extends BaseEntity{
@@ -11,8 +12,11 @@ export class CustomerEntity extends BaseEntity{
     @Column()
     dni! : number;
 
-    @OneToOne( ()=> UserEntity, (user) => user.customer)
+    @OneToOne(()=> UserEntity, (user) => user.customer)
     @JoinColumn({name : "user_id"})
-    customer! : UserEntity 
+    user! : UserEntity 
+
+    @OneToMany(()=> PurchaseEntity, (purchase) => purchase.customer)
+    purchases!: Array<PurchaseEntity>;
 
 }
