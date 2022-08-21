@@ -16,9 +16,7 @@ class Server extends ConfigServer {
         super();
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended:true}));
- 
-        this.dbConnect()
-        
+        this.dbConnect();
         this.app.use(morgan("dev"));
         this.app.use(cors());
 
@@ -30,16 +28,15 @@ class Server extends ConfigServer {
         return [new UserRouter().router];
     }
 
-    async dbConnect(){
-        try{
-            await new DataSource(this.typeORMConfing).initialize();
-            console.log("Data Base Conected")
-        }catch(e){
-            console.log(e)
-            throw new Error("Error starting DB");
-        }    
-    }
-
+    async dbConnect(): Promise<DataSource | void> {
+        return this.initConnect
+          .then(() => {
+            console.log("Connect Success");
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
 
     public listen(){
         this.app.listen(this.port, ()=> {
