@@ -19,7 +19,7 @@ export class UserService extends BaseService<UserEntity> {
         return (await this.execRepository).findOneBy({id})
     }
 
-    async CreatedUser(body: UserDTO):Promise<UserEntity>{
+    async createUser(body: UserDTO):Promise<UserEntity>{
         return (await this.execRepository).save(body);
     }
 
