@@ -6,6 +6,10 @@ import cors from "cors";
 import { ConfigServer } from './config/config';
 import { DataSource } from "typeorm";
 import { UserRouter } from "./user/user.router";
+import { CategoryRouter } from "./category/category.router";
+import { CustomerRouter } from './customer/customer.router';
+import { PurchaseRouter } from './purchase/purchase.router';
+import { PurchaseProductRouter } from './purchase/purchase-product.router';
 
 class Server extends ConfigServer {
     public app: express.Application = express();
@@ -25,7 +29,13 @@ class Server extends ConfigServer {
     }
 
     public routers(): Array< express.Router >{
-        return [new UserRouter().router];
+        return [
+          new UserRouter().router,
+          new CategoryRouter().router,
+          new CustomerRouter().router,
+          new PurchaseRouter().router,
+          new PurchaseProductRouter().router,     
+      ];
     }
 
     async dbConnect(): Promise<DataSource | void> {
