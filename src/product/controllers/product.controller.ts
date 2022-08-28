@@ -5,6 +5,7 @@ export class ProductController {
   constructor(
     private readonly productService: ProductService = new ProductService()
   ) {}
+
   async getProducts(req: Request, res: Response) {
     try {
       const data = await this.productService.findAllProducts();
@@ -13,6 +14,7 @@ export class ProductController {
       console.error(e);
     }
   }
+
   async getProductById(req: Request, res: Response) {
     const { id } = req.params;
     try {
@@ -22,6 +24,7 @@ export class ProductController {
       console.error(e);
     }
   }
+
   async createProduct(req: Request, res: Response) {
     try {
       const data = await this.productService.createProduct(req.body);
@@ -30,6 +33,7 @@ export class ProductController {
       console.error(e);
     }
   }
+
   async updateProduct(req: Request, res: Response) {
     const { id } = req.params;
     try {
@@ -39,6 +43,7 @@ export class ProductController {
       console.error(e);
     }
   }
+  
   async deleteProduct(req: Request, res: Response) {
     const { id } = req.params;
     try {
