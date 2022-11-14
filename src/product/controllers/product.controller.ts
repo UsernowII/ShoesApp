@@ -43,7 +43,7 @@ export class ProductController {
       console.error(e);
     }
   }
-  
+
   async deleteProduct(req: Request, res: Response) {
     const { id } = req.params;
     try {

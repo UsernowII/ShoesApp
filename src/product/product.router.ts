@@ -22,7 +22,7 @@ export class ProductRouter extends BaseRouter<ProductController> {
     this.router.put("/product/:id", (req, res) =>
       this.controller.updateProduct(req, res)
     );
-    
+
     this.router.delete("/product/:id", (req, res) =>
       this.controller.deleteProduct(req, res)
     );
