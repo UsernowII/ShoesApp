@@ -1,5 +1,5 @@
-export enum Status {
-    PEDING = "PEDING",
+export enum PurchaseStatus {
+    PENDING = "PENDING",
     COMPLETE = "COMPLETE",
     CONFIRMED = "CONFIRMED",
 }

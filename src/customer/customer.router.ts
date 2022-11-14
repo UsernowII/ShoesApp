@@ -1,5 +1,5 @@
 import { BaseRouter } from "../shared/router/router";
-import { CustomerController } from './controller/customer.controller';
+import { CustomerController } from "./controller/customer.controller";
 
 export class CustomerRouter extends BaseRouter<CustomerController> {
   constructor() {

@@ -3,13 +3,13 @@ import { BaseEntity } from '../../config/base.entity';
 import { CustomerEntity } from '../../customer/entities/customer.entity';
 import { PurchaseProductEntity } from './purchases-product.entity';
 
-import { Status } from './status';
+import { PurchaseStatus } from './status';
 
 @Entity({name : "purchases"})
 export class PurchaseEntity extends BaseEntity{
     
-    @Column({type: "enum", enum: Status, nullable:false})
-    status! : Status
+    @Column({type: "enum", enum: PurchaseStatus, nullable:false})
+    status! : PurchaseStatus
 
     //TODO: REFACTOR ENUM
     @Column()

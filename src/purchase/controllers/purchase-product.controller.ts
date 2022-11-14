@@ -2,8 +2,7 @@ import { Request, Response } from "express";
 import { PurchaseProductService } from "../services/purchase-product.service";
 
 export class PurchaseProductController {
-  
-    constructor(
+  constructor(
     private readonly purchaseProductService: PurchaseProductService = new PurchaseProductService()
   ) {}
 
@@ -51,7 +50,7 @@ export class PurchaseProductController {
       console.error(e);
     }
   }
-  
+
   async deletePurchaseProduct(req: Request, res: Response) {
     const { id } = req.params;
     try {

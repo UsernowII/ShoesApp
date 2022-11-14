@@ -1,28 +1,26 @@
-import { IsNotEmpty } from 'class-validator';
-import { BaseDTO } from '../../config/base.dto';
-import { RoleType } from './role.type';
-
+import { IsNotEmpty } from "class-validator";
+import { BaseDTO } from "../../config/base.dto";
+import { RoleType } from "./role.type";
 
 export class UserDTO extends BaseDTO {
+  @IsNotEmpty()
+  userName!: string;
 
-    @IsNotEmpty()
-    userName! : string;
+  @IsNotEmpty()
+  lastname!: string;
 
-    @IsNotEmpty()
-    lastname! : string;
+  @IsNotEmpty()
+  email!: string;
 
-    @IsNotEmpty()
-    email! : string;
+  @IsNotEmpty()
+  password!: string;
 
-    @IsNotEmpty()
-    password! : string;
+  @IsNotEmpty()
+  city!: string;
 
-    @IsNotEmpty()
-    city! : string;
+  @IsNotEmpty()
+  province!: string;
 
-    @IsNotEmpty()
-    province! : string;
-
-    @IsNotEmpty()
-    role!: RoleType; 
+  @IsNotEmpty()
+  role!: RoleType;
 }
