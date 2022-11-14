@@ -8,9 +8,10 @@ import { ConfigServer } from './config/config';
 import { DataSource } from "typeorm";
 import { UserRouter } from "./user/user.router";
 import { CategoryRouter } from "./category/category.router";
-import { CustomerRouter } from './customer/customer.router';
-import { PurchaseRouter } from './purchase/purchase.router';
-import { PurchaseProductRouter } from './purchase/purchase-product.router';
+import { CustomerRouter } from "./customer/customer.router";
+import { PurchaseRouter } from "./purchase/purchase.router";
+import { PurchaseProductRouter } from "./purchase/purchase-product.router";
+import { ProductRouter } from "./product/product.router";
 
 class Server extends ConfigServer {
     public app: express.Application = express();
@@ -32,6 +33,7 @@ class Server extends ConfigServer {
     public routers(): Array< express.Router >{
         return [
           new UserRouter().router,
+          new ProductRouter().router,
           new CategoryRouter().router,
           new CustomerRouter().router,
           new PurchaseRouter().router,

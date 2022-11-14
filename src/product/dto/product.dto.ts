@@ -17,7 +17,4 @@ export class ProductDTO extends BaseDTO {
 
     @IsNotEmpty()
     category! : CategoryEntity
-
-    @IsNotEmpty()
-    role! : RoleType
 }

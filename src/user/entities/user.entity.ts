@@ -25,7 +25,7 @@ export class UserEntity extends BaseEntity{
     city! : string;
 
     @Column()
-    provincy! : string;
+    province! : string;
 
     @Column({type: "enum", enum: RoleType, nullable:false} )
     role! : RoleType;

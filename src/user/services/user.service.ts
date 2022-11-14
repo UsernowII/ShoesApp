@@ -10,7 +10,6 @@ export class UserService extends BaseService<UserEntity> {
         super(UserEntity);
     } 
     
-    
     async findAllUser():Promise<UserEntity[]>{
         return (await this.execRepository).find();
     }
@@ -30,6 +29,5 @@ export class UserService extends BaseService<UserEntity> {
     async updateUser(id: string, infoUpdate: UserDTO | any):Promise<UpdateResult>{
         return (await this.execRepository).update(id, infoUpdate);
     }
-
 
 }

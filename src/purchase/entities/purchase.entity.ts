@@ -8,8 +8,7 @@ import { Status } from './status';
 @Entity({name : "purchases"})
 export class PurchaseEntity extends BaseEntity{
     
-    @Column()
-    //TODO: CATEGORIZE ENUM
+    @Column({type: "enum", enum: Status, nullable:false})
     status! : Status
 
     //TODO: REFACTOR ENUM
