@@ -1,5 +1,6 @@
 import { IsNotEmpty } from 'class-validator';
 import { BaseDTO } from '../../config/base.dto';
+import { RoleType } from './role.type';
 
 
 export class UserDTO extends BaseDTO {
@@ -21,5 +22,7 @@ export class UserDTO extends BaseDTO {
 
     @IsNotEmpty()
     provincy! : string;
-    
+
+    @IsNotEmpty()
+    role!: RoleType; 
 }

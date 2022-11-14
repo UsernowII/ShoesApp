@@ -1,6 +1,7 @@
 import { IsNotEmpty } from 'class-validator';
 import { CategoryEntity } from '../../category/entities/category.entity';
 import { BaseDTO } from '../../config/base.dto';
+import { RoleType } from '../../user/dto/role.type';
 
 
 export class ProductDTO extends BaseDTO {
@@ -17,4 +18,6 @@ export class ProductDTO extends BaseDTO {
     @IsNotEmpty()
     category! : CategoryEntity
 
+    @IsNotEmpty()
+    role! : RoleType
 }
