@@ -1,6 +1,5 @@
 export enum Status {
-    aviable,
-    soldOut,
-    confirmed,
-    outstanding
+    PEDING = "PEDING",
+    COMPLETE = "COMPLETE",
+    CONFIRMED = "CONFIRMED",
 }

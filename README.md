@@ -31,8 +31,19 @@ docker --version
 ``` 
 
 ``` 
-docker-compose up
+docker compose up
 ```
+### Migraciones
+
+Se deben ejecutar el script para crear el archivo de migracion con el flag -- src/migrations/customFile y correr la migracion para actualizar la base de datos
+
+
+``` 
+npm run m:gen -- src/migrations/update-post-table
+
+npm run m:run
+```
+
 
 # Clases:
 

@@ -21,7 +21,7 @@ export class UserDTO extends BaseDTO {
     city! : string;
 
     @IsNotEmpty()
-    provincy! : string;
+    province! : string;
 
     @IsNotEmpty()
     role!: RoleType; 
