@@ -9,7 +9,7 @@ export class CategoryService extends BaseService <CategoryEntity>{
         super(CategoryEntity);
     }
 
-    async findAllCategories(): Promise<CategoryEntity[]> {
+    async  findAllCategories(): Promise<CategoryEntity[]> {
         return (await this.execRepository).find();
     }
 

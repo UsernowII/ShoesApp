@@ -3,6 +3,7 @@ import "reflect-metadata"
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+
 import { ConfigServer } from './config/config';
 import { DataSource } from "typeorm";
 import { UserRouter } from "./user/user.router";
